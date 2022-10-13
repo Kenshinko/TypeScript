@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"http": "http-server -p 5500",
+		"http": "http-server -c-1 -p 5500",
 		"build": "rd -r public\\scripts 2>null & tsc",
 		"build-dev": "rd -r public\\scripts 2>null & tsc -p tsconfig-dev.json",
 		"lint": "eslint src --ext .js --ext .ts",
