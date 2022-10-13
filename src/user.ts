@@ -1,6 +1,7 @@
 import { renderBlock } from './lib.js'
+import { IUserData } from './index.js'
 
-export function renderUserBlock (userName: string, userAvatar: string, favoriteItemsAmount: number) {
+export function renderUserBlock (userData: IUserData, favoriteItemsAmount?: unknown) {
 	const favoritesCaption = favoriteItemsAmount ? favoriteItemsAmount : 'ничего нет'
 	const hasFavoriteItems = favoriteItemsAmount > 0 ? true : false
 
@@ -8,9 +9,9 @@ export function renderUserBlock (userName: string, userAvatar: string, favoriteI
 		'user-block',
 		`
 		<div class="header-container">
-			<img class="avatar" src=${userAvatar} alt=${userName} />
+			<img class="avatar" src=${userData.avatarUrl} alt=${userData.userName} />
 			<div class="info">
-					<p class="name">${userName}</p>
+					<p class="name">${userData.userName}</p>
 					<p class="fav">
 						<i class="heart-icon${hasFavoriteItems ? ' active' : ''}"></i>${favoritesCaption}
 					</p>
